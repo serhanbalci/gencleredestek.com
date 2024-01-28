@@ -1,0 +1,78 @@
+<%= form_for @company do |f| %>
+  <div class="mx-auto max-w-xl space-y-6">
+    <div class="space-y-2 text-center">
+      <h1 class="text-3xl font-bold">Firmanı Kaydet</h1>
+      <p class="text-gray-500 dark:text-gray-400">Türkiye'de Yazılım sektörüne yeni katılacak gençlere destek ol.</p>
+    </div>
+    <div class="space-y-4">
+      <div class="space-y-2">
+        <label
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          for="company-name"
+        >
+          Firma adı
+        </label>
+        <%= f.text_field :name, class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50", id: "company-name", placeholder: "Acme Corp", required: true %>
+      </div>
+      <div class="space-y-2">
+        <label
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          for="address"
+        >
+          Sektör
+        </label>
+        <%= f.select :work_positions, class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50", id: "address", placeholder: "123 Main St", required: true %>
+      </div>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="space-y-2 col-span-1">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="city"
+          >
+            Web sitesi
+          </label>
+          <%= f.text_field :website, class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50", id: "city", placeholder: "City", required: true %>
+        </div>
+        <div class="space-y-2 col-span-1">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="state"
+          >
+            Konum
+          </label>
+          <%= f.text_field :location, class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50", id: "state", placeholder: "State", required: true %>
+        </div>
+        <div class="space-y-2 col-span-1">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="zip"
+          >
+            Çalışma şekli
+          </label>
+          <%= f.text_field :work_types, class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50", id: "zip", placeholder: "ZIP Code", required: true %>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <label
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          for="contact-person"
+        >
+          Kullanılan teknolojiler
+        </label>
+        <%= f.text_field :perks, class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50", id: "contact-person", placeholder: "John Doe", required: true %>
+      </div>
+      <div class="space-y-2">
+        <label
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          for="email"
+        >
+          Avantajlar ve Etkinlikler
+        </label>
+        <%= f.text_field :description, class: "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50", id: "email", placeholder: "Email", required: true %>
+      </div>
+      <button type="submit" class="inline-flex items-center justify-center h-10 w-full m-0.5 bg-transparent hover:bg-blue-500 text-blue-700 hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+      Firmanı Kaydet
+    </button>    
+    </div>
+  </div>
+<% end %>

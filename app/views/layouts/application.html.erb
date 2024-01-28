@@ -29,9 +29,35 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <body class='bg-[#F0F4FB]'>
-      <%= yield %>
+    <div class="absolute md:top-0 left-0 hidden sm:block -z-10">
+      <img src=<%= asset_path("header_background.png") %> />
+    </div>
+    <header>
+      <div class="container md:px-20 py-11 md:h-screen mx-auto">
+        <nav class="flex items-center justify-between px-4 lg:px-12">
+          <a href="/" class="text-gray-600 z-10 cursor-pointer">
+            <img src=<%= asset_path("logo.svg") %>>
+          </a>
+          <a
+            href="<%= new_company_path %>"
+            class="flex items-center p-2 md:px-4 border rounded-lg space-x-2 border-[#0062FF] cursor-pointer"
+          >
+            <img src=<%= asset_path("send.svg") %>>
+            <span class="text-[#0062FF]">Firmanı Ekle</span>
+          </a>
+        </nav>
+    <%= yield %>
+    <footer class="pt-14 pb-8 md:pb-48 flex items-center justify-between container px-8 md:px-32 mx-auto">
+      <p class="text-[#A2B2CE]">
+        Bu site açık kaynaklı olup <a href="https://github.com/sdogruyol/gencleredestek.com" class="text-[#0062FF]">buradan</a> destek
+        olabilirsiniz.
+      </p>
+
+      <a href="#"> <img src=<%= asset_path("chevron_up.svg") %>> </a>
+    </footer>
   </body>
 </html>
